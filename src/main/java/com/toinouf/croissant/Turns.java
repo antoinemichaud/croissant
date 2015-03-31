@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Turns {
-    public Candidates history;
+    public Candidates history = new Candidates();
     private Candidate nextCandidate;
 
-    public List<String> history() {
-        return new ArrayList<>();
+    public List<Candidate> history() {
+        return history.candidates;
     }
 
     public Candidate next() {
@@ -16,6 +16,9 @@ public class Turns {
     }
 
     public void addNext(Candidate candidate) {
+        if (nextCandidate != null) {
+            history.add(nextCandidate);
+        }
         nextCandidate = candidate;
     }
 }

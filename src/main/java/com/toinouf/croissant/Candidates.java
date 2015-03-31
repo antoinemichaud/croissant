@@ -11,4 +11,8 @@ public class Candidates {
     public Candidates(Candidate... candidates) {
         this.candidates = Lists.newArrayList(candidates);
     }
+
+    public void add(Candidate candidate) {
+        candidates.add(candidate);
+    }
 }

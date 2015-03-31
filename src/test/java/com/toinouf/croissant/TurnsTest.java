@@ -29,4 +29,19 @@ public class TurnsTest {
         assertThat(turns.history()).isEmpty();
         assertThat(turns.next()).isEqualTo(candidate);
     }
+
+    @Test
+    public void should_amend_next_user_and_add_him_to_history_when_next_is_not_null() throws Exception {
+        // Given
+        Candidate firstCandidate = new Candidate("first@bla.com");
+        Candidate secondCandidate = new Candidate("second@bla.com");
+
+        Turns turns = new Turns();
+        turns.addNext(firstCandidate);
+        turns.addNext(secondCandidate);
+
+        // When / Then
+        assertThat(turns.history()).containsOnly(firstCandidate);
+        assertThat(turns.next()).isEqualTo(secondCandidate);
+    }
 }
