@@ -6,4 +6,11 @@ public class Candidate {
     public Candidate(String emailAddress) {
         this.emailAddress = emailAddress;
     }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "emailAddress='" + emailAddress + '\'' +
+                '}';
+    }
 }
