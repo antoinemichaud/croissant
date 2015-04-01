@@ -23,8 +23,6 @@ public class RandomChooserTest {
         List<Candidate> shuffledCandidates =
                 randomChooser.shuffleList(newArrayList(firstCandidate,
                         secondCandidate, thirdCandidate, fourthCandidate));
-        System.out.println(shuffledCandidates);
-
 
         // Then
         assertThat(shuffledCandidates).containsExactly(fourthCandidate, firstCandidate, secondCandidate, thirdCandidate);
